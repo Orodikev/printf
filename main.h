@@ -60,7 +60,7 @@ int octal_printf(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int hexa_printf(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int Up_hexa_printf(va_list types, char buffer[],
+int up_hexa_printf(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int hexaval_printf(va_list types, char map_to[],
 char buffer[], int flags, char flag_ch, int width, int precision, int size);
@@ -78,13 +78,13 @@ int rot13_printf(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int hwrt_char(char c, char buffer[],
 	int flags, int width, int precision, int size);
-int num_wrt(int is_positive, int ind, char buffer[],
+int num_wrt(int post int ind, char buffer[],
 	int flags, int width, int precision, int size);
 int write_no(int ind, char bff[], int flags, int width, int precision,
 	int length, char padd, char extra_c);
 int pointer_wrt(char buffer[], int ind, int length,
 	int width, int flags, char padd, char extra_c, int padd_start);
-int unsgnd_wrt(int is_negative, int ind,
+int unsgnd_wrt(int neg, int ind,
 char buffer[],
 	int flags, int width, int precision, int size);
 
