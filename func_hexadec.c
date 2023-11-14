@@ -15,7 +15,7 @@ int unsigned_printf(va_list types, char buffer[],
 	int i = BUFF_SIZE - 2;
 	unsigned long int no = va_arg(types, unsigned long int);
 
-	no = convert_size_unsgnd(no, size);
+	no = size_unsg(no, size);
 
 	if (no == 0)
 		buffer[i--] = '0';
@@ -87,10 +87,10 @@ int octal_printf(va_list types, char buffer[],
  * @size: finds the specified printing size
  * Return: The chars that have been printed
  */
-int hexaval_printf(va_list types, char buffer[],
+int hexa_printf(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	return (hexa_printf(types, "0123456789abcdef", buffer,
+	return (hexaval_printf(types, "0123456789abcdef", buffer,
 		flags, 'x', width, precision, size));
 }
 

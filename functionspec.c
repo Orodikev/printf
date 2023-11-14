@@ -145,7 +145,7 @@ int reverse_printf(va_list types, char buffer[],
  * @size: Gives the size of the print
  * Return: Total number of chars printed
  */
-Int rot13_printf(va_list types, char buffer[],
+int rot13_printf(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char ec;

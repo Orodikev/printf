@@ -78,7 +78,7 @@ int rot13_printf(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int hwrt_char(char c, char buffer[],
 	int flags, int width, int precision, int size);
-int num_wrt(int post int ind, char buffer[],
+int num_wrt(int post, int index, char buffer[],
 	int flags, int width, int precision, int size);
 int write_no(int ind, char bff[], int flags, int width, int precision,
 	int length, char padd, char extra_c);

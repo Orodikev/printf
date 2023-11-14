@@ -138,7 +138,7 @@ int integer_printf(va_list types, char buffer[],
 
 	i++;
 
-	return (num_wrt(is_negative, i, buffer, flags, width, precision, size));
+	return (num_wrt(neg, i, buffer, flags, width, precision, size));
 }
 
 /************* A function to print binary type ****************/
