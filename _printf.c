@@ -9,7 +9,9 @@ void printb(char buffer[], int *b_index);
  */
 int _printf(const char *f_p, ...)
 {
-	int i, p = 0, print_c = 0;
+	int i = 0;
+	int p = 0;
+	int print_c = 0;
 	int flags, width, precision, size, b_index = 0;
 	va_list list;
 	char buffer[BUFF_SIZE];
@@ -19,14 +21,13 @@ int _printf(const char *f_p, ...)
 
 	va_start(list, f_p);
 
-	for (i = 0; f_p && f_p[i] != '\0'; i++)
+	while (f_p && f_p[i] != '\0')
 	{
 		if (f_p[i] != '%')
 		{
 			buffer[b_index++] = f_p[i];
 			if (b_index == BUFF_SIZE)
 				printb(buffer, &b_index);
-			/* write(1, &f_p[i], 1);*/
 			print_c++;
 		}
 		else
@@ -42,7 +43,9 @@ int _printf(const char *f_p, ...)
 			if (p == -1)
 				return (-1);
 			print_c += p;
+		
 		}
+		i++;
 	}
 
 	printb(buffer, &b_index);

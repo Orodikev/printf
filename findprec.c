@@ -18,7 +18,7 @@ int find_precision(const char *format, int *ar, va_list list)
 
 	precision = 0;
 
-	for (cr += 1; format[cr] != '\0'; cr++)
+	while (format[cr] != '\0')
 	{
 		if (digit_check(format[cr]))
 		{
@@ -33,6 +33,7 @@ int find_precision(const char *format, int *ar, va_list list)
 		}
 		else
 			break;
+		cr++;
 	}
 
 	*ar = cr - 1;

@@ -66,7 +66,8 @@ int pointer_printf(va_list types, char buffer[],
 int special_printf(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	int i = 0, offset = 0;
+	int i;
+	int offset = 0;
 	char *str = va_arg(types, char *);
 
 	UNUSED(flags);
@@ -77,14 +78,14 @@ int special_printf(va_list types, char buffer[],
 	if (str == NULL)
 		return (write(1, "(null)", 6));
 
-	while (str[i] != '\0')
+	/**while (str[i] != '\0')**/
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (printability_check(str[i]))
 			buffer[i + offset] = str[i];
 		else
 			offset += hex_append(str[i], buffer, i + offset);
 
-		i++;
 	}
 
 	buffer[i + offset] = '\0';
